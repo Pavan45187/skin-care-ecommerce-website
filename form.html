@@ -1,0 +1,164 @@
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandora Skincare Form</title>
+  <style>
+    body {
+      font-family:'Times New Roman', Times, serif;
+      color:#ccc;
+      background-color: rgb(0, 0, 0);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #a14573;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      padding-top:12px;
+      padding-bottom: 1px;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .answer-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+   .answer-option {
+      border: 2px solid #ff7eb9;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .answer-option:hover {
+      background-color: #ff7eb9;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7eb9;
+      color: white;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    .input-group input,
+    .input-group select {
+      width: 97%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .btn-submit {
+      background-color: #ff7eb9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="skincareForm" method="post" onSubmit="submitForm(event)">
+      <div class="question">1. How would you describe your skin type?</div>
+      <div class="answer-options">
+        <label><input type="radio" name="skinType" value="Dry" required> Dry</label>
+        <label><input type="radio" name="skinType" value="Balanced" required> Balanced</label>
+        <label><input type="radio" name="skinType" value="Oily" required> Oily</label>
+        <label><input type="radio" name="skinType" value="Combination" required> Combination</label>
+      </div>
+
+      <div class="question">2. How much makeup do you use on a daily basis?</div>
+        <div class="answer-options">
+          <label><input type="radio" name="makeupUsage" value="None" required> None</label>
+          <label><input type="radio" name="makeupUsage" value="A little" required> A little</label>
+          <label><input type="radio" name="makeupUsage" value="A decent amount" required> A decent amount</label>
+          <label><input type="radio" name="makeupUsage" value="Full coverage" required> Full coverage</label>
+        </div>
+
+        <div class="question">3. How often is your skin sensitive?</div>
+        <div class="answer-options">
+          <label><input type="radio" name="skinSensitivity" value="Never" required> Never</label>
+          <label><input type="radio" name="skinSensitivity" value="Rarely" required> Rarely</label>
+          <label><input type="radio" name="skinSensitivity" value="Sometimes" required> Sometimes</label>
+          <label><input type="radio" name="skinSensitivity" value="All the time" required> All the time</label>
+        </div>
+
+        <div class="question">4. Select your skin care goals</div>
+        <div class="input-group">
+          <select name="skinCareGoals" multiple required>
+            <option value="Hydrate">Hydrate</option>
+            <option value="Rejuvenate">Rejuvenate</option>
+            <option value="Brighten">Brighten</option>
+            <option value="Calm/Soothe">Calm/Soothe</option>
+            <option value="Minimize redness">Minimize redness</option>
+            <option value="Minimize pores">Minimize pores</option>
+            <option value="Tighten">Tighten</option>
+            <option value="Reduce shine">Reduce shine</option>
+            <option value="Anti-pollution">Anti-pollution</option>
+            <option value="Even tone">Even tone</option>
+            <option value="Reduce breakouts">Reduce breakouts</option>
+            <option value="Smooth">Smooth</option>
+          </select>
+        </div>
+
+        <div class="question">5. Specify skin allergies if any</div>
+        <div class="input-group">
+          <input type="text" name="skinAllergies">
+        </div>
+
+        <div class="question">6. Select your subscription plan</div>
+        <div class="answer-options">
+          <label><input type="radio" name="subscriptionPlan" value="One and done" id="plan" required> One and done</label>
+          <label><input type="radio" name="subscriptionPlan" value="Essentials package plan" id="plan" required> Essentials package plan</label>
+          <label><input type="radio" name="subscriptionPlan" value="Premium membership plan" id="plan" required> Premium membership plan</label>
+        </div>
+
+        <div class="question">7. Choose your payment </div>
+        <div class="answer-options">
+          <label><input type="radio" name="paymentMethod" value="UPI" required> UPI</label>
+          <label><input type="radio" name="paymentMethod" value="Cash on Delivery" required> Cash on Delivery</label>
+        </div>
+      
+        <div class="input-group">
+          <div class="question" style="margin-bottom: 0;">8. Enter your details:</div>
+          <input type="text" name="firstName" placeholder="First name" id="fname" required>
+          <input type="text" name="lastName" placeholder="Last name" id="lname" required>
+          <input type="text" name="address" placeholder="Address" required>
+          <input type="tel" name="contactNumber" placeholder="Contact number" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+      
+        <div class="input-group">
+          <div class="question" style="margin-bottom: 0;">9. Enter UPI phone number</div>
+          <input type="tel" name="upiPhoneNumber" placeholder="UPI phone number">
+        </div>
+      
+      
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+      <script>
+        function submitForm(event){
+          event.preventDefault();
+          const fname=document.getElementById('fname').value;
+          const lname=document.getElementById('lname').value;
+          const plan=document.getElementById('plan').value;
+          const url = `bill.html?fname=${encodeURIComponent(fname)}&lname=${encodeURIComponent(lname)}&plan=${encodeURIComponent(plan)}`;
+          window.location.href=url;
+        }
+
+      </script>
+    </div>
+      
+      
+  </body>
+</html>

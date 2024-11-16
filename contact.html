@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif;
+            background-color: #f6b8b9;
+            color: #222222;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(34, 34, 34, 0.8);
+            font-family: 'Lora', serif;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .navbar a:hover {
+            color: #EF7C8E;
+            border-bottom-color: #EF7C8E; 
+        }
+
+        .navbar a.active {
+            background-color: #F8AFA6;
+            color: white;
+        }
+
+        #contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align elements vertically */
+            margin-top: 120px;
+        }
+
+        #pgtitle {
+            font-family: Georgia, serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: #833746;
+            margin: 20px 0; /* Adjusted margin */
+            text-align: center;
+        }
+
+        .contact-box {
+            width: clamp(100px, 90%, 1000px);
+            margin: 80px 50px;
+            display: flex; /* Remove flex-wrap to allow side by side display */
+        }
+        .contact-tagline {
+            font-size: 20px;
+            color: #833746; /* Darker Brown */
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .contact-links,
+        .contact-form-wrapper {
+            width: 50%; /* Make each element occupy half of the contact box */
+            padding: 8% 5% 10% 5%;
+        }
+
+        .contact-links {
+            background-color: #833746;
+            background-image: url("con6.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .contact-form-wrapper {
+            border-radius: 0 10px 10px 0;
+        }
+        @media only screen and (max-width: 800px) {
+            .contact-links,
+            .contact-form-wrapper {
+                width: 100%;
+            }
+
+            .contact-links {
+                border-radius: 10px 10px 0 0;
+            }
+
+            .contact-form-wrapper {
+                border-radius: 0 0 10px 10px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .contact-box {
+                width: 95%;
+                margin: 8% 5%;
+            }
+        }
+
+        .form-item {
+            position: relative;
+        }
+
+        label,
+        input,
+        textarea {
+            font-family: "Poppins", sans-serif;
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            left: 2%;
+            color: #999;
+            font-size: clamp(14px, 1.5vw, 18px);
+            pointer-events: none;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            outline: 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            padding: 12px;
+            font-size: clamp(15px, 1.5vw, 18px);
+        }
+
+        input:focus + label,
+        input:valid + label,
+        textarea:focus + label,
+        textarea:valid + label {
+            font-size: clamp(13px, 1.3vw, 16px);
+            color: #777;
+            top: -20px;
+            transition: all 0.225s ease;
+        }
+
+        .submit-btn {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 16px;
+                padding: 10px 20px;
+                margin: 2px auto;
+                display: block;
+                border: none;
+                border-radius: 5px;
+                background-color: #833746; 
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+        .submit-btn:hover {
+                background-color: #9e2727; /* Rose Pink */
+        }
+        
+        #footer {
+            color: white;
+            background-color: #826354;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .navbar.scrolled {
+            position: fixed;
+            background-color: #222222;
+        }
+    </style>
+</head>
+<body>
+  <div class="navbar" id="navbar">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a> 
+    <a href="contact.html" class="active">Contact</a>
+    <a href="blog.html">Blogs</a>
+  </div>
+    <section id="contact">
+        <div class="contact-header">
+            <div id="pgtitle">Contact Us</div>
+            <p class="contact-tagline">Have a question or want to share your feedback? We'd love to hear from you!</p>
+        </div>
+        <div class="contact-box">
+            
+            <div class="contact-links">
+            </div>
+            <div class="contact-form-wrapper">
+                <form>
+                    <div class="form-item">
+                        <input type="text" name="sender" required />
+                        <label>Name:</label>
+                    </div>
+                    <div class="form-item">
+                        <input type="email" name="email" required />
+                        <label>Email:</label>
+                    </div>
+                    <div class="form-item">
+                        <textarea class="" name="message" required></textarea>
+                        <label>Message:</label>
+                    </div>
+                    <input
+                        type="hidden"
+                        name="recipient_email"
+                        value="harsharshan4@gmail.com"
+                    />
+                    <button class="submit-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <p><i>Celebrate Yourself</i></p>  
+    </div>
+
+    <script>
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+          var navbar = document.querySelector(".navbar");
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+              navbar.classList.add("scrolled");
+          } 
+          else {
+              navbar.classList.remove("scrolled");
+          }
+    }
+
+    </script>
+</body>
+</html>

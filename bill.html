@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: #ccc;
+            background-color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #a14573;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bill-details {
+            margin-bottom: 10px;
+        }
+
+        .btn-submit {
+            background-color: #ff7eb9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Bill</h2>
+    <div class="bill-details" id="name"></div>
+    <div class="bill-details" id="plan"></div>
+    <div class="bill-details" id="price"></div>
+    <div class="bill-details" id="gst"></div>
+    <div class="bill-details" id="total"></div>
+    <button onclick="downloadBill()" class="btn-submit">Download Bill as PDF</button>
+</div>
+
+<script>
+    window.onload = function () {
+        // Retrieve query parameters from URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        // Get values from query parameters
+        const fname = urlParams.get('fname');
+        const lname = urlParams.get('lname');
+        const plan = urlParams.get('plan');
+
+        // Calculate price based on plan
+        let price = 0;
+        if (plan === "One and done") {
+            price = 350;
+        } else if (plan === "Essentials package plan") {
+            price = 1200;
+        } else if (plan === "Premium membership plan") {
+            price = 2500;
+        }
+
+        // Calculate GST
+        const gst = price * 0.18;
+
+        // Calculate total amount
+        const total = price + gst;
+
+        // Display bill details
+        document.getElementById("name").innerText = "Name: " + fname + " " + lname;
+        document.getElementById("plan").innerText = "Plan: " + plan;
+        document.getElementById("price").innerText = "Price: " + price;
+        document.getElementById("gst").innerText = "GST: " + gst.toFixed(2);
+        document.getElementById("total").innerText = "Total: " + total.toFixed(2);
+    };
+
+    // Function to download bill as PDF
+    function downloadBill() {
+        const container = document.querySelector('.container');
+        const filename = 'bill.pdf';
+        html2pdf(container, {
+            margin: 1,
+            filename: filename,
+            image: {type: 'jpeg', quality: 0.98},
+            html2canvas: {dpi: 192, letterRendering: true},
+            jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
+        });
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>

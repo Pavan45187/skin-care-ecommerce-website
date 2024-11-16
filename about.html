@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif; 
+        }
+        
+        /* Navbar styling */
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(34, 34, 34, 0.8); /* Dark Gray with some opacity */
+            font-family: 'Lora', serif;
+            position: absolute;
+            width: 100%; 
+            transition: background-color 0.3s; 
+            z-index: 999; /* Ensure navbar is above other elements */
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFFFFF; /* White */
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease; 
+            border-bottom: 2px solid transparent; 
+        }
+        
+        .navbar a:hover {
+            color: #EF7C8E; /* Rose Pink */
+            border-bottom-color: #EF7C8E; 
+        }
+        
+        .navbar a.active {
+            background-color: #F8AFA6; /* Blush Pink */
+            color: white;
+        }
+        
+        /*TOPIMAGE*/
+        #topimg {
+            background-image: url("Homemodif.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            z-index: -1; 
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #5E362F; /* Darker Brown */
+        }
+        
+        
+        /*END TOPIMG*/
+
+    #pgtitle {
+        font-family: Georgia, serif;
+        font-size: 60px; 
+        font-weight: bold; 
+        color: #833746; 
+        margin-top: 20px; 
+    }
+
+    #aboutpara {
+        font-family: 'Lora';
+        color: #db5f78; /* Dusty Rose */
+        padding: 20px;
+        width: 45%;
+        text-align: center;
+        position: relative;
+    }
+    
+    .divider {
+        width: 80%;
+        border-bottom: 2px solid #EF7C8E; /* Rose Pink */
+        margin: auto;
+    }
+
+    /* Illustration */
+    #illustration {
+        width: 200px;
+        height: auto;
+        margin-top: auto;
+    }
+
+    #timeline-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 50px auto 40px;
+        max-width: 1000px;
+    }
+
+    .timeline {
+        width: 50%;
+        margin-left: 20px;
+        padding: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    .timeline:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: #F8AFA6; /* Blush Pink */
+        left: 50%;
+        margin-left: -3px;
+    }
+
+    .timeline li {
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .timeline li:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .timeline li div {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 20px;
+        background: #FCD5CE; /* Lighter Coral */
+        border-radius: 8px;
+    }
+
+    .timeline li div:nth-child(odd) {
+        float: right;
+    }
+
+    .timeline li div:nth-child(even) {
+        float: left;
+    }
+
+    .timeline li div h3 {
+        margin-top: 0;
+        color: #222222; /* Dark Gray */
+    }
+
+    .timeline li div p {
+        margin: 0;
+        color: #5E362F; /* Darker Brown */
+    }
+
+    /* Timeline icon styling */
+    .timeline li div:before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #F8AFA6; /* Blush Pink */
+        left: 50%;
+        top: 15px;
+        transform: translateX(-50%);
+    }
+
+    /* Animation for timeline icon */
+    .timeline li div:before {
+        animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: translateX(-50%) scale(1);
+        }
+        100% {
+            transform: translateX(-50%) scale(1.2);
+        }
+    }
+
+    #footer {
+        font-family: 'Lora';
+        color: black;
+        background-color: #826354; /* Taupe Brown */
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .spacer {
+        height: 20px; 
+    }
+
+    /* Style for navbar when scrolled */
+    .navbar.scrolled {
+        position: fixed;
+        background-color: #222222; /* Dark Gray */
+    }
+</style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" class="active">About</a> 
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blogs</a>
+    </div>
+
+    <div id="topimg">
+        <div class="overlay">
+            <div id="pgtitle">About Us</div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+    <hr>
+    <p style="color: #997182; font-size: 40px" align="center">Our Journey</p>
+    
+    <div id="timeline-container">
+        <!-- About Paragraph -->
+        <div id="aboutpara">
+            <p>At Pandora, we firmly believe that true beauty emanates from skin that's healthy and radiates vitality. </p>
+            <p>Our dedication to the well-being of your skin is unwavering. Recognizing each skin's unique traits, we offer personalized solutions tailored to your skincare goals. With our innovative skincare quiz, we tailor recommendations to your exact needs, ensuring your skin receives the care it deserves.</p>
+            <div class="divider"></div>
+            <img id="illustration" src="illu10.jpg" alt="Illustration">
+            <p>Pandora is not merely a skincare brand; we're your trusted companion on your voyage towards the realization of beautiful, healthy skin. Come join us as we redefine the very essence of skincare, embarking on an elevating journey that celebrates the unique beauty within you.
+            </p>
+        </div>
+    
+        <!-- Timeline section -->
+        <ul class="timeline">
+            <li>
+                <div class="active">
+                    <h3>January 2024</h3>
+                    <p>Conceived Pandora as a university course project</p>
+                    <p>Researched skincare industry and market trends</p>
+                    <p>Prepared project proposal and abstract</p>
+                </div>
+            </li>
+            <li>
+                <div class="active">
+                    <h3>February 2024</h3>
+                    <p>Developed initial project prototype</p>
+                </div>
+            </li>
+            <li>
+                <div class="active">
+                    <h3>March 2024</h3>
+                    <p>Reviewed project progress and conducted interim evaluation</p>
+                    <p>Designed user interface and initiated coding</p>
+                </div>
+            </li>
+            <li>
+                <div class="active">
+                    <h3>April 2024</h3>
+                    <p>Finalized coding and completed 100% implementation</p>
+                    <p>Conducted final review, refined project based on feedback</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+
+    <div id="footer">
+        <p><i>Celebrate Yourself</i></p>  
+    </div>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            var navbar = document.getElementById("navbar");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    </script>
+</body>
+</html>

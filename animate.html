@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(235,124,187);
+                flex-direction: column;
+            }
+            
+            .animation-container {
+                position: absolute;
+                top: 100px;
+            }
+            .fruit {
+                position: absolute;
+                width: 100px; 
+                height: 100px; 
+            }
+            .tag-container {
+                position: absolute; 
+                bottom: 100px; 
+                font-family: 'Lora';
+                font-size: 20px;
+                font-weight: bold;
+                color: #5d001e; 
+                text-align: center; 
+                width: 100%; 
+                z-index: 2; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="animation-container">
+            <img src="cherry.png" class="fruit">
+            <img src="cherry.png" class="fruit">
+            <img src="cherry.png" class="fruit">
+        </div>         
+        
+        <div class="tag-container">
+            <p>Good things take time.</p>
+            <p>Please wait while we curate your needs.</p>
+        </div>
+
+        <script>
+            let angle = 0;
+            const radius = 100; 
+            setInterval(() => {
+                const container = document.querySelector('.animation-container');
+                const fruits = document.querySelectorAll('.fruit');
+                fruits.forEach((fruit, index) => {
+                    const x = Math.cos(angle + index * (Math.PI * 2 / fruits.length)) * radius;
+                    const y = Math.sin(angle + index * (Math.PI * 2 / fruits.length)) * radius;
+                    fruit.style.left = container.clientWidth / 2 + x + 'px';
+                    fruit.style.top = container.clientHeight / 2 + y + 'px';
+                });
+                angle += 0.05 ; //speed
+            }, 1000 / 80); 
+
+            // Set timeout to redirect after 3 seconds
+            setTimeout(function() {
+                window.location.href = "bill.html"; // Redirect to home page
+            }, 3000); // 3000 milliseconds = 3 seconds
+        </script>      
+    </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif; 
+            color: #000000; /* Black text color */
+        }
+        .btn {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #F8AFA6; /* Blush Pink */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto; /* Center the button */
+        }
+        .btn:hover {
+            background-color: #EF7C8E; /* Rose Pink */
+        }
+        /* Navbar styling */
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(34, 34, 34, 0.8); /* Dark Gray with some opacity */
+            font-family: 'Lora', serif;
+            position: absolute;
+            width: 100%; 
+            transition: background-color 0.3s; 
+            z-index: 999; /* Ensure navbar is above other elements */
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFFFFF; /* White */
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease; 
+            border-bottom: 2px solid transparent; 
+        }
+        
+        .navbar a:hover {
+            color: #EF7C8E; /* Rose Pink */
+            border-bottom-color: #EF7C8E; 
+        }
+        
+        .navbar a.active {
+            background-color: #F8AFA6; /* Blush Pink */
+            color: white;
+        }
+        
+        /*TOPIMAGE*/
+        #topimg {
+            background-image: url("Homemodif.jpg"); /* Change image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            z-index: -1; 
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #5E362F; /* Darker Brown */
+        }
+        
+        #pgtitle {
+            font-family: Georgia, serif;
+            font-size: 60px; 
+            font-weight: bold; 
+            color: #833746; 
+            margin-top: 20px; 
+        }
+
+        .post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fcd5ce; /* Lighter Coral */
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex; /* Added */
+            align-items: center; /* Added */
+        }
+
+        .post-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222222; /* Dark Gray */
+            margin-bottom: 10px;
+        }
+
+        .post-meta {
+            color: #5E362F; /* Darker Brown */
+            margin-bottom: 10px;
+        }
+
+        .post-content {
+            color: #5E362F; /* Darker Brown */
+            line-height: 1.6;
+        }
+
+        .post-image {
+            width: 200px; /* Adjust as needed */
+            margin-right: 20px; /* Add spacing between image and text */
+        }
+
+        #footer {
+            font-family: 'Lora';
+            color: black;
+            background-color: #826354; /* Taupe Brown */
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Style for navbar when scrolled */
+        .navbar.scrolled {
+            position: fixed;
+            background-color: #222222; /* Dark Gray */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="blog.html" class="active">Blog</a>
+    </div>
+
+    <div id="topimg">
+        <div class="overlay">
+            <div id="pgtitle">Blogs</div>
+        </div>
+    </div>
+
+    <div class="post-container">
+        
+        <img src="illu9.png" alt="Post Image" class="post-image">
+        <div class="post-content-wrapper">
+            <div class="post-title">WHEN TO USE NIACINAMIDE IN YOUR SKIN CARE ROUTINE</div>
+            <div class="post-meta">Posted on November 13, 2023 by Shalwah Evans
+            </div>
+            <div class="post-content">
+                Niacinamide has been used on the face of skin care enthusiasts, dermatologists and other experts alike — and it deserves its moment in the spotlight. Even if you’re new to creating a skin care regimen or just stick to a simple routine, there’s a good chance that this popular skin care ingredient is already in your routine. If you’ve ever wanted to fade dark spots, reduce sebum on your skin or even brighten your complexion, you’ve likely interacted with the B vitamin. Of course, you still may be wondering if you’re maximizing niacinamide’s use in your skin care routine. Here, learn when to use niacinamide properly and how to add the hero ingredient to your routine for the best results. 
+            </div>
+            <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.lorealparisusa.com%2Fbeauty-magazine%2Fskin-care%2Fskin-care-essentials%2Fwhen-to-use-niacinamide&sa=D&sntz=1&usg=AOvVaw2SYdMT_Co13pprHA8xqO0x" class="btn">Read blog</a>
+        </div>
+    </div>
+
+    <div class="post-container">
+    <img src="illu11.png" alt="Post Image" class="post-image"> 
+        <div class="post-content-wrapper">
+            <div class="post-title">Vitamin E Oil: A Complete Breakdown of All Its Benefits—and How to Use It</div>
+            <div class="post-meta">Posted on January 2, 2024 by Jane Smith</div>
+            <div class="post-content">
+                Even if you haven't heard the buzz about vitamin E oil chances are extremely high that this ingredient is used in a lot of your favorite skincare products. It’s everywhere—and for good reason. Dry skin? Fine lines? Redness? Yes, vitamin E treats all of those and more. Below, the experts break down the ingredient in more detail and explain what it is, its benefits, and why you should be using it.
+            </div>
+            <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.lorealparisusa.com%2Fbeauty-magazine%2Fskin-care%2Fskin-care-essentials%2Fwhen-to-use-niacinamide&sa=D&sntz=1&usg=AOvVaw2SYdMT_Co13pprHA8xqO0x" class="btn">Read blog</a>
+        </div>
+    </div>
+
+    <div class="post-container">
+    <img src="illu3.png" alt="Post Image" class="post-image"> 
+        <div class="post-content-wrapper">
+            <div class="post-title">The Essential Skincare Steps You Shouldn't Be Skipping... Like, Ever!</div>
+            <div class="post-meta">Posted on January 3, 2024 by Alex Johnson</div>
+            <div class="post-content">
+                Whenever we do an “Ask us anything” on IG, we’re constantly asked, “what products or practices will really make a difference to our skin?” And TBH, we totally get it; a 10-step routine is not always feasible – or necessary – or easy on the pocket, which means formulas that provide real results are a must. The good news is that there are some essential skincare steps that nobody should ever, ever skip – yes, even after happy hour. To help you curate the ultimate skincare routine, we’re discussing our non-negotiable skincare steps. We’ve even added some of our current STANS so you can shop as you go. Class is officially in session.
+            </div>
+            <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.lorealparisusa.com%2Fbeauty-magazine%2Fskin-care%2Fskin-care-essentials%2Fwhen-to-use-niacinamide&sa=D&sntz=1&usg=AOvVaw2SYdMT_Co13pprHA8xqO0x" class="btn">Read blog</a>
+        </div>
+    </div>
+
+    <div class="post-container">
+    <img src="illu5.png" alt="Post Image" class="post-image"> 
+        <div class="post-content-wrapper">
+            <div class="post-title">19 Foundation Hacks That Will Change Your Life</div>
+            <div class="post-meta">Posted on January 4, 2024 by Emily Watson</div>
+            <div class="post-content">
+                Foundation is a total game changer, and possibly one of THE most integral parts of any beauty look.
+             If the shade is off or the blending isn’t on point, it can ruin the whole look. Achieving flawless foundation
+              is also a major skill and there’s a lot of room for error – even the most seasoned pro can have a day where their
+               foundation just does not behave! Remember, the aim is always to achieve incredible, healthy-looking skin not great foundation,
+                and that’s what we’re going to help you do with these epic hacks and tips.
+
+            Fortunately for you, we’ve spent more time than we could possibly count playing around with different formulas (yes, it’s fun), 
+            mixing and matching products to achieve that flawless final look, and we’ve learned a lot along the way. Here are our ride-or-die 
+            foundation hacks that never let us down.
+            </div>
+            <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.lorealparisusa.com%2Fbeauty-magazine%2Fskin-care%2Fskin-care-essentials%2Fwhen-to-use-niacinamide&sa=D&sntz=1&usg=AOvVaw2SYdMT_Co13pprHA8xqO0x" class="btn">Read blog</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p><i>Celebrate Yourself</i></p>  
+    </div>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            var navbar = document.getElementById("navbar");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    </script>
+</body>
+</html>

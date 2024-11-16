@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif; 
+        }
+        
+        /* Navbar styling */
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(34, 34, 34, 0.8); /* Dark Gray with some opacity */
+            font-family: 'Lora', serif;
+            position: absolute;
+            width: 100%; 
+            transition: background-color 0.3s; 
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFFFFF; /* White */
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease; 
+            border-bottom: 2px solid transparent; 
+        }
+        
+        .navbar a:hover {
+            color: #EF7C8E; /* Rose Pink */
+            border-bottom-color: #EF7C8E; 
+        }
+        
+        .navbar a.active {
+            background-color: #F8AFA6; /* Blush Pink */
+            color: white;
+        }
+        
+        /*TOPIMAGE*/
+        #topimg{
+                background-image: url("Homemodif.jpg");
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                position: relative;
+                z-index: -1; 
+            }
+            .overlay{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: #5E362F; /* Darker Brown */
+            }
+            #brand{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 70px;
+                font-weight: bold;
+            }
+            #tagline{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 24px;
+            }
+            /*END TOPIMG*/
+            .btn {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 16px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: #F8AFA6; /* Blush Pink */
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .btn:hover {
+                background-color: #EF7C8E; /* Rose Pink */
+            }
+            /*IMAGE STYLING*/
+            .adimg{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 50px;
+            }
+            .adimg img{
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                margin: 0 10px;
+            
+            }
+            .adimg div{
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+            }
+            .caption{
+                font-family: 'Lora';
+                color: #db5f78; 
+                margin-top:10px;
+            }
+            /*END IMAGE STYLING*/
+
+            #intropara {
+                font-family: 'Lora';
+                color: #db5f78; /* Dusty Rose */
+                padding: 20px;
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+            }
+            #footer {
+                font-family: 'Lora';
+                color: black;
+                background-color: #826354; /* Taupe Brown */
+                padding: 20px;
+                text-align: center;
+                margin-top:50px;
+            }
+            .spacer {
+               height: 20px; 
+            }
+            
+            /* Style for navbar when scrolled */
+            .navbar.scrolled {
+                position: fixed;
+                background-color: #222222; /* Dark Gray */
+            }
+            
+            
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="home.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a> 
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blogs</a>
+    </div>
+
+    <div id="topimg">
+        <div class="overlay">
+            <div id="brand" style="font-size: 70px; font-weight: bold;">PANDORA</div>
+            <div id="tagline" style="font-size: 24px;"><i>Indulge in Radiance, Tailored Just for You</i></div>
+        </div>
+    </div>
+
+    <p style="color: #997182; font-size: 20px; font-style: italic;" align="center">Discover your skin's perfect match</p>
+    <div style="text-align: center;">
+        <a href="form.html" class="btn">Take the test</a>
+    </div>
+
+    <div class="spacer"></div>
+    <hr>
+    <p style="color: #997182; font-size: 40px" align="center">A Full Service Experience</p>
+    <div class="adimg">
+        <div>
+            <img src="GlowPath.jpg">
+            <p class="caption">GlowPath</p>
+        </div>
+        
+        <div>
+            <img src="Curation.jpg">
+            <p class="caption">Pandora's Curation</p>
+        </div>
+
+        <div>
+            <img src="RadiantCircle.jpg">
+            <p class="caption">Radiant Circle</p>
+        </div>
+    </div>
+    <div id="intropara">
+        <p>Welcome to our online skincare sanctuary, where the journey to rejuvenation and beauty unfolds before your eyes. Just like the mythical Pandora, a symbol of elegance and allure, we're here to guide you on a quest to discover your unique radiance. Our platform embodies genuine care and innocence, harnessing the power of technology to help you blossom into your most beautiful self.  Just as every step in our development has been a meticulous process of growth, so too is your path to achieving radiant, glowing skin. Join us as we embark on this exciting journey of transformation and self-discovery.</p>
+    </div>
+
+    <div id="footer">
+        <p>
+            <i>Celebrate Yourself</i>
+        </p>  
+    </div>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            var navbar = document.getElementById("navbar");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    </script>
+</body>
+</html>
